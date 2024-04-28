@@ -17,6 +17,8 @@ const config: Config = {
         "outer-space": "#44485C",
         "big-foot-feel": "#F18461",
         "alabaster": "#F1EAE7",
+        "onyx": "#333546",
+        "outer-space-100": "#515569"
       }
     },
   },

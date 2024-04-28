@@ -3,7 +3,7 @@ import profile from "@/assets/perfil.png";
 
 export default function Main() {
   return (
-    <main className="bg-outer-space flex items-center">
+    <main className="bg-outer-space flex items-center flex-wrap">
       <div className="max-w-2xl text-alabaster grid gap-4 px-24">
         <p className="text-lg">Olá!</p>
         <h1 className="text-6xl">Eu sou Antonio Claudio</h1>
