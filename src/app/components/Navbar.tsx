@@ -24,7 +24,7 @@ export default function Navbar() {
       <nav
         className={clsx(
           scrollPosition > 0 ? "shadow-[0_4px_20px_-1px_rgba(0,0,0,0.1)]" : "",
-          "flex items-center justify-center sticky top-0 h-20 max-xl:h-20 bg-outer-space text-white transition-all duration-300"
+          "flex items-center justify-center sticky top-0 h-20 max-xl:h-20 bg-blue-500 text-white transition-all duration-300"
         )}
       >
         <div
@@ -33,8 +33,8 @@ export default function Navbar() {
             "max-xl:px-8"
           )}
         >
-          <div className="flex items-center gap-x-2">
-            <Code size={44} className="h-12 w-12 text-big-foot-feel" />
+          <div className="flex items-center gap-x-2 cursor-pointer hover:opacity-65">
+            <Code size={44} className="h-12 w-12 text-yellow-500" />
             <h2 className="text-2xl font-bold">Claudio</h2>
           </div>
           <MenuHamburger options={options} />
@@ -48,15 +48,12 @@ export default function Navbar() {
               <li key={option.title}>
                 <a
                   href={option.url}
-                  className="after:content-[''] after:block after:bg-big-foot-feel after:w-0 after:h-1 hover:after:w-full after:transition-[width_3.s]"
+                  className="after:content-[''] after:block after:bg-yellow-500 after:w-0 after:h-1 hover:after:w-full after:transition-[width_3.s]"
                 >
                   {option.title}
                 </a>
               </li>
             ))}
-            <button className="bg-big-foot-feel text-gray-50 px-8 py-4 font-bold rounded-md">
-              Fale comigo
-            </button>
           </ul>
         </div>
       </nav>
@@ -89,22 +86,22 @@ function MenuHamburger({ options }: MenuHamburgerProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <X
-              className="absolute right-5 top-10"
+              className="absolute text-black cursor-pointer right-5 top-10 hover:text-gray-700"
               size={32}
               onClick={() => setIsOpen(false)}
             />
-            <ul className="flex flex-col gap-6 text-gray-700 text-base font-medium  ">
+            <ul className="flex flex-col gap-6 text-gray-700 text-base font-medium">
               {options.map((option) => (
-                <li key={option.title}>
+                <li
+                  key={option.title}
+                  className="after:content-[''] after:block after:bg-yellow-500 after:w-0 after:h-1 hover:after:w-full after:transition-[width_3.s]"
+                >
                   <a href={option.url} onClick={() => setIsOpen(false)}>
                     {option.title}
                   </a>
                 </li>
               ))}
             </ul>
-            <button className="bg-big-foot-feel text-gray-50 px-8 py-4 font-bold rounded-md">
-              Fale comigo
-            </button>
           </div>
         </div>
       )}
