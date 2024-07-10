@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 import Navbar from "./components/Navbar";
 import Image from "next/image";
@@ -11,6 +12,7 @@ import imgNextjs from "@/assets/nextjs.svg";
 import imgGithub from "@/assets/github.svg";
 import imgNodejs from "@/assets/node-js.svg";
 import imgFirebase from "@/assets/firebase.svg";
+import { GithubLogo, GoogleChromeLogo } from "@phosphor-icons/react";
 
 export default function Home() {
   return (
@@ -108,6 +110,68 @@ export default function Home() {
             <CardItem title="GITHUB" urlImage={imgGithub} />
             <CardItem title="NODEJS" urlImage={imgNodejs} />
             <CardItem title="FIREBASE" urlImage={imgFirebase} />
+          </div>
+        </div>
+      </section>
+      <section className="bg-blue-700 px-24 py-11 flex justify-center">
+        <div className="max-w-7xl w-full text-white">
+          <header className="text-center">
+            <h2 className="text-4xl">Meus Projetos</h2>
+            <h3 className="max-w-2xl text-lg mx-auto my-5">
+              Projetos desenvolvidos ao longo da minha trajetória acadêmica
+            </h3>
+          </header>
+          <div className="flex flex-wrap gap-9 px-24 justify-center">
+            <div className="w-80 h-72 bg-blue-400 rounded-lg text-center py-4 shadow-lg flex flex-col  justify-between">
+              <h4 className="text-3xl">Data Lembre (Em Desenvolvimento)</h4>
+              <p className="text-sm w-60 mx-auto mt-2">
+                A plataforma é um site desenvolvido para ajudar usuários a
+                lembrar de datas especiais de seus amigos, familiares e colegas
+              </p>
+              <div className="flex justify-center gap-4">
+                <a
+                  target="_blank"
+                  href="https://github.com/antonioclaudioofc/data-lembre"
+                  className="bg-black text-white gap-2 flex p-3 w-min rounded-md"
+                >
+                  <GithubLogo size={24} />
+                  <span>Github</span>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://data-lembre.vercel.app/"
+                  className="bg-gray-600 text-white flex gap-2 p-3 w-min rounded-md"
+                >
+                  <GoogleChromeLogo size={24} />
+                  <span>Web</span>
+                </a>
+              </div>
+            </div>
+            <div className="w-80 h-72 bg-blue-400 rounded-lg text-center py-4 shadow-lg flex flex-col  justify-between">
+              <h4 className="text-3xl">Extrair images de PDF</h4>
+              <p className="text-sm w-60 mx-auto mt-2">
+                O site desenvolvido para facilitar a extração de imagens
+                contidas em documentos PDF
+              </p>
+              <div className="flex justify-center gap-4">
+                <a
+                  target="_blank"
+                  href="https://github.com/antonioclaudioofc/extract-pdf-image"
+                  className="bg-black text-white gap-2 flex p-3 w-min rounded-md"
+                >
+                  <GithubLogo size={24} />
+                  <span>Github</span>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://extract-pdf-image.vercel.app/"
+                  className="bg-gray-600 text-white flex gap-2 p-3 w-min rounded-md"
+                >
+                  <GoogleChromeLogo size={24} />
+                  <span>Web</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
