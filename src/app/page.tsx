@@ -1,195 +1,160 @@
 "use client";
-import clsx from "clsx";
-import Navbar from "./components/Navbar";
+
 import Image from "next/image";
-import profile from "@/assets/perfil.png";
-import programming from "@/assets/programming.svg";
-import imgHtml from "@/assets/html.svg";
-import imgCss from "@/assets/css.svg";
-import imgTailwindcss from "@/assets/tailwind-css.svg";
-import imgJavascript from "@/assets/javascript.svg";
-import imgNextjs from "@/assets/nextjs.svg";
-import imgGithub from "@/assets/github.svg";
-import imgNodejs from "@/assets/node-js.svg";
-import imgFirebase from "@/assets/firebase.svg";
-import { GithubLogo, GoogleChromeLogo } from "@phosphor-icons/react";
+
+import profile from "@/assets/profile.png";
+import { ArrowDown, EnvelopeSimple, List, X } from "@phosphor-icons/react";
+import clsx from "clsx";
+import { useState } from "react";
+import { About } from "@/components/About";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className="bg-blue-500 py-11 flex justify-center">
-        <div
-          className={clsx(
-            "flex items-center justify-center flex-wrap max-w-7xl w-full px-24",
-            "max-xl:px-8 max-xl:w-full"
-          )}
-        >
-          <div className="text-white flex flex-col gap-y-4 max-w-xl">
-            <p className="text-lg">Olá!</p>
-            <h1 className="text-6xl">Eu sou Antonio Claudio</h1>
-            <h2 className="text-4xl">Desenvolver FrontEnd</h2>
-            <p className="font-bold text-base ">
-              Entusiasta da tecnologia, especializado em transformar ideias
-              complexas em interfaces de usuário intuitivas
-            </p>
-            <div className="flex gap-4">
-              <button className="bg-yellow-500 border-yellow-600 hover:bg-yellow-300 hover:border-yellow-300 text-gray-50 px-8 py-4 font-bold rounded-md">
-                Fale comigo
-              </button>
-              <button className="text-yellow-500 bg-white hover:bg-gray-200 px-8 py-4 font-bold rounded-md">
-                Saiba mais
-              </button>
-            </div>
+      <div className="font-sans h-screen w-full bg-violet-950">
+        <div className="absolute inset-0 bg-black opacity-75"></div>
+        <Navbar />
+        <main className="relative z-10 mt-40 flex flex-col gap-6 justify-center items-center">
+          <div className="h-40 w-40 bg-violet-950 rounded-full overflow-hidden">
+            <Image
+              className="w-full h-full object-cover"
+              src={profile}
+              alt="Foto de perfil"
+              width={500}
+              height={500}
+            />
           </div>
-          <Image
-            className="max-w-xl"
-            src={profile}
-            width={500}
-            height={123}
-            alt=""
-          />
-        </div>
-      </main>
-      <section className="bg-blue-700 py-11 flex justify-center">
-        <div
-          className={clsx(
-            "flex items-center px-24 gap-5 max-w-7xl w-full text-white",
-            "max-xl:px-8 max-xl:w-full max-xl:flex-col"
-          )}
-        >
-          <Image
-            className="max-w-xl"
-            src={programming}
-            width={500}
-            height={123}
-            alt=""
-          />
-          <div className="max-w-xl">
-            <h2 className="text-alabaster text-4xl font-bold mb-4">
-              Sobre Mim
+          <header className="text-center z-10">
+            <h2 className="text-sm font-bold text-gray-300 animate-fade-in">
+              Frontend Developer
             </h2>
-            <div className="text-gray-300 flex flex-col gap-y-3">
-              <p>
-                Aos 15 anos, embarquei na jornada técnica ao ensino médio em
-                administração, influenciado por amigos e familiares. No entanto,
-                percebi que essa área estava além da minha realidade e não me
-                agradava. Mais me formei.
-              </p>
-              <p>
-                Uma amiga do ensino fundamental sugeriu que eu explorasse a área
-                de informática. Segui o conselho dela e me matriculei no curso
-                mais próximo, onde descobri minha paixão pelo desenvolvimento
-                web.
-              </p>
-              <p>
-                O desenvolvimento web me mostrou o poder da nossa imaginação
-                para criar serviços online que usamos diariamente. Agora, estou
-                empolgado em integrar minhas criações com diversos aplicativos
-                já disponíveis.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-blue-500 px-24 py-11 flex justify-center">
-        <div className="max-w-7xl w-full text-white">
-          <header className="text-center">
-            <h2 className="text-4xl">Skills</h2>
-            <h3 className="max-w-2xl text-lg mx-auto my-5">
-              Estas são as tecnologias que fazem parte do meu conjunto de
-              habilidades para criar websites e aplicativos
-            </h3>
+            <h1 className="text-2xl font-bold text-white animate-fade-out">
+              Antonio Claudio
+            </h1>
+            <p className="font-base text-gray-300 animate-fade-in">
+              Olá, seja bem vindo ao meu portifólio.
+            </p>
+            <Button className="mt-4">Entrar em contato</Button>
           </header>
-          <div className="flex flex-wrap gap-9 px-24 justify-center">
-            <CardItem title="HTML" urlImage={imgHtml} />
-            <CardItem title="CSS" urlImage={imgCss} />
-            <CardItem title="TAILWINDCSS" urlImage={imgTailwindcss} />
-            <CardItem title="JAVASCRIPT" urlImage={imgJavascript} />
-            <CardItem title="NEXTJS" urlImage={imgNextjs} />
-            <CardItem title="GITHUB" urlImage={imgGithub} />
-            <CardItem title="NODEJS" urlImage={imgNodejs} />
-            <CardItem title="FIREBASE" urlImage={imgFirebase} />
-          </div>
-        </div>
-      </section>
-      <section className="bg-blue-700 px-24 py-11 flex justify-center">
-        <div className="max-w-7xl w-full text-white">
-          <header className="text-center">
-            <h2 className="text-4xl">Meus Projetos</h2>
-            <h3 className="max-w-2xl text-lg mx-auto my-5">
-              Projetos desenvolvidos ao longo da minha trajetória acadêmica
-            </h3>
-          </header>
-          <div className="flex flex-wrap gap-9 px-24 justify-center">
-            <div className="w-80 h-72 bg-blue-400 rounded-lg text-center py-4 shadow-lg flex flex-col  justify-between">
-              <h4 className="text-3xl">Data Lembre (Em Desenvolvimento)</h4>
-              <p className="text-sm w-60 mx-auto mt-2">
-                A plataforma é um site desenvolvido para ajudar usuários a
-                lembrar de datas especiais de seus amigos, familiares e colegas
-              </p>
-              <div className="flex justify-center gap-4">
-                <a
-                  target="_blank"
-                  href="https://github.com/antonioclaudioofc/data-lembre"
-                  className="bg-black text-white gap-2 flex p-3 w-min rounded-md"
-                >
-                  <GithubLogo size={24} />
-                  <span>Github</span>
-                </a>
-                <a
-                  target="_blank"
-                  href="https://data-lembre.vercel.app/"
-                  className="bg-gray-600 text-white flex gap-2 p-3 w-min rounded-md"
-                >
-                  <GoogleChromeLogo size={24} />
-                  <span>Web</span>
-                </a>
-              </div>
-            </div>
-            <div className="w-80 h-72 bg-blue-400 rounded-lg text-center py-4 shadow-lg flex flex-col  justify-between">
-              <h4 className="text-3xl">Extrair images de PDF</h4>
-              <p className="text-sm w-60 mx-auto mt-2">
-                O site desenvolvido para facilitar a extração de imagens
-                contidas em documentos PDF
-              </p>
-              <div className="flex justify-center gap-4">
-                <a
-                  target="_blank"
-                  href="https://github.com/antonioclaudioofc/extract-pdf-image"
-                  className="bg-black text-white gap-2 flex p-3 w-min rounded-md"
-                >
-                  <GithubLogo size={24} />
-                  <span>Github</span>
-                </a>
-                <a
-                  target="_blank"
-                  href="https://extract-pdf-image.vercel.app/"
-                  className="bg-gray-600 text-white flex gap-2 p-3 w-min rounded-md"
-                >
-                  <GoogleChromeLogo size={24} />
-                  <span>Web</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </main>
+        <ArrowDown
+          className="absolute bottom-4 text-white left-1/2 animate-bounce z-50"
+          size={32}
+        />
+      </div>
+      <About />
     </>
   );
 }
 
-function CardItem(props: { title: string; urlImage: string }) {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
+
+function Button({ children, ...props }: ButtonProps) {
   return (
-    <div className="bg-yellow-500 text-white cursor-pointer text-lg font-bold text-center px-8 py-5 w-min shadow-lg rounded-lg hover:bg-yellow-300 hover:text-black">
-      <Image
-        className="max-w-2xl"
-        src={props.urlImage}
-        width={160}
-        height={160}
-        alt=""
-      />
-      <span>{props.title}</span>
-    </div>
+    <button
+      {...props}
+      className={clsx(
+        "text-white bg-violet-900 hover:bg-violet-950 outline-none transition-all ease-linear font-bold rounded-md text-base px-5 py-3",
+        props.className
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+
+interface Options {
+  title: string;
+  url: string;
+}
+
+function Navbar() {
+  const options: Options[] = [
+    { title: "Sobre mim", url: "#" },
+    { title: "Meus projetos", url: "#" },
+    { title: "Contato", url: "#" },
+  ];
+
+  return (
+    <nav
+      className={clsx(
+        "flex items-center justify-between px-20 max-w-7xl mx-auto relative z-50 h-20",
+        "max-xl:px-5 max-xl:h-20"
+      )}
+    >
+      <div className="flex items-center gap-3 text-gray-400 text-lg max-md:text-sm">
+        <EnvelopeSimple size={24} />
+        <span>claudioalvesdev@gmail.com</span>
+      </div>
+      <MenuHamburger options={options} />
+      <ul
+        className={clsx(
+          "flex gap-6 font-medium mt-4 rounded-lg z-50",
+          "max-md:hidden"
+        )}
+      >
+        {options.map((option) => (
+          <li key={option.title}>
+            <a
+              href={option.url}
+              className="block py-2 px-3 md:p-0 text-white hover:text-gray-400 "
+            >
+              {option.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+interface MenuHamburgerProps {
+  options: Options[];
+}
+
+function MenuHamburger({ options }: MenuHamburgerProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <div
+        className={clsx("hidden", "max-md:flex")}
+        onClick={() => setIsOpen(true)}
+      >
+        <List
+          className="cursor-pointer text-gray-300 hover:opacity-70"
+          size={24}
+        />
+      </div>
+      {isOpen && (
+        <div
+          className="fixed top-0 right-0 w-full h-full bg-black bg-opacity-20 ease-in z-50"
+          onClick={() => setIsOpen(false)}
+        >
+          <div
+            className="fixed top-0 right-0 h-full bg-white w-3/4
+            flex justify-start items-start p-10 py-20 animate-slide-right-to-left"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <X
+              className="absolute right-5 top-10 cursor-pointer hover:opacity-40"
+              size={24}
+              onClick={() => setIsOpen(false)}
+            />
+            <ul className="flex flex-col gap-6 text-gray-700 text-base font-medium  ">
+              {options.map((option) => (
+                <li key={option.title}>
+                  <a href={option.url} onClick={() => setIsOpen(false)}>
+                    {option.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
