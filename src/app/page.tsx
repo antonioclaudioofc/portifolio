@@ -7,6 +7,8 @@ import { ArrowDown, EnvelopeSimple, List, X } from "@phosphor-icons/react";
 import clsx from "clsx";
 import { useState } from "react";
 import { About } from "@/components/About";
+import { MyProject } from "@/components/MyProject";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -34,7 +36,9 @@ export default function Home() {
             <p className="font-base text-gray-300 animate-fade-in">
               Olá, seja bem vindo ao meu portifólio.
             </p>
-            <Button className="mt-4">Entrar em contato</Button>
+            <a href="#footer">
+              <Button className="mt-4">Entrar em contato</Button>
+            </a>
           </header>
         </main>
         <ArrowDown
@@ -43,6 +47,8 @@ export default function Home() {
         />
       </div>
       <About />
+      <MyProject />
+      <Footer />
     </>
   );
 }
