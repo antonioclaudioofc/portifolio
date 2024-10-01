@@ -16,8 +16,13 @@ export default function Home() {
       <div className="font-sans h-screen w-full bg-violet-950">
         <div className="absolute inset-0 bg-black opacity-75"></div>
         <Navbar />
-        <main className="relative z-10 mt-40 flex flex-col gap-6 justify-center items-center">
-          <div className="h-40 w-40 bg-violet-950 rounded-full overflow-hidden">
+        <main
+          className={clsx(
+            "relative h-full z-10 flex flex-col gap-6 items-center mt-40",
+            "max-md:mt-10"
+          )}
+        >
+          <div className="h-72 w-72 bg-violet-950 rounded-full overflow-hidden">
             <Image
               className="w-full h-full object-cover"
               src={profile}
@@ -27,13 +32,13 @@ export default function Home() {
             />
           </div>
           <header className="text-center z-10">
-            <h2 className="text-sm font-bold text-gray-300 animate-fade-in">
+            <h2 className="text-base font-bold text-gray-300 animate-fade-in">
               Frontend Developer
             </h2>
-            <h1 className="text-2xl font-bold text-white animate-fade-out">
+            <h1 className="text-3xl font-bold text-white animate-fade-out">
               Antonio Claudio
             </h1>
-            <p className="font-base text-gray-300 animate-fade-in">
+            <p className="text-lg text-gray-300 animate-fade-in">
               Olá, seja bem vindo ao meu portifólio.
             </p>
             <a href="#footer">
@@ -41,10 +46,9 @@ export default function Home() {
             </a>
           </header>
         </main>
-        <ArrowDown
-          className="absolute bottom-4 text-white left-1/2 animate-bounce z-50"
-          size={32}
-        />
+        <div className="absolute bottom-0 z-50 left-1/2 transform -translate-x-1/2 mb-4 text-white ">
+          <ArrowDown className="animate-bounce" size={32} />
+        </div>
       </div>
       <About />
       <MyProject />

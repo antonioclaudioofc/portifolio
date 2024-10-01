@@ -77,7 +77,7 @@ function SkillCard() {
     { name: "Tailwind CSS", alt: "Logo do Tailwindcss", src: tailwind },
   ];
   return (
-    <div className="flex items-center text-gray-800 justify-between gap-y-2 flex-wrap my-3">
+    <div className="flex items-center text-gray-800 justify-between gap-2.5 my-3 flex-wrap ">
       {images.map((image) => (
         <div
           key={image.name}

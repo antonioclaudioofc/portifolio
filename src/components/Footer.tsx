@@ -8,7 +8,7 @@ export function Footer() {
       <footer className="text-white max-w-7xl mx-auto py-10 w-full">
         <div className="flex items-center justify-center gap-3 text-gray-400">
           <a target="_blank" href="https://github.com/antonioclaudioofc">
-            <LinkedinLogo
+            <GithubLogo
               className="w-10 h-10 cursor-pointer hover:text-gray-200"
               size={32}
             />
@@ -17,7 +17,7 @@ export function Footer() {
             target="_blank"
             href="https://www.linkedin.com/in/antonio-claudio-233741231/"
           >
-            <GithubLogo
+            <LinkedinLogo
               className="w-10 h-10 cursor-pointer hover:text-gray-200"
               size={32}
             />
