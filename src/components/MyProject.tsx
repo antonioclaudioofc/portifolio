@@ -3,7 +3,7 @@ import aniverlembre from "@/assets/aniverlembre.jpeg";
 
 export function MyProject() {
   return (
-    <div className="py-20 w-full bg-violet-950 relative">
+    <div className="py-20 w-full bg-violet-950 relative" id="myProject">
       <div className="absolute inset-0 bg-black opacity-75"></div>
       <section className="text-white max-w-7xl mx-auto py-20 w-full px-5 relative z-10">
         <h3 className="text-4xl font-bold text-center">Meus projetos</h3>

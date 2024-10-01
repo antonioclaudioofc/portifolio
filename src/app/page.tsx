@@ -18,7 +18,7 @@ export default function Home() {
         <Navbar />
         <main
           className={clsx(
-            "relative h-full z-10 flex flex-col gap-6 items-center mt-40",
+            "relative h-full z-10 flex flex-col gap-6 items-center mt-20",
             "max-md:mt-10"
           )}
         >
@@ -82,9 +82,9 @@ interface Options {
 
 function Navbar() {
   const options: Options[] = [
-    { title: "Sobre mim", url: "#" },
-    { title: "Meus projetos", url: "#" },
-    { title: "Contato", url: "#" },
+    { title: "Sobre mim", url: "#about" },
+    { title: "Meus projetos", url: "#myProject" },
+    { title: "Contato", url: "#footer" },
   ];
 
   return (

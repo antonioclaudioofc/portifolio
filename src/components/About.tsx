@@ -10,7 +10,7 @@ import tailwind from "@/assets/tailwind-css.svg";
 
 export function About() {
   return (
-    <div className="w-full bg-violet-950 relative">
+    <div className="w-full bg-violet-950 relative" id="about">
       <section className="text-white max-w-7xl mx-auto py-20 w-full px-5">
         <h3 className="text-4xl font-bold text-center">Sobre mim</h3>
         <div className="max-w-2xl text-base text-gray-400 text-justify mx-auto">
